@@ -5,6 +5,8 @@ const server = new Hapi.Server({
 	app: config
 })
 
+// this is wrong, don't do it like this
+// do server.app.key1 = 'value1', for example, instead
 server.app = config 
 
 server.register([{
