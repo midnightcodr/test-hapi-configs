@@ -1,10 +1,9 @@
-exports.register = (server, options, next) => {
-	console.log(`registering the config plugin`)
-	server.expose(options)
-	next()
-}
-
-exports.register.attributes = {
-	name: 'config',
-	version: '1.0'
+const pkg = require('../package')
+exports.plugin = {
+  register: (server, options) => {
+    console.log(`registering the config plugin`)
+    server.expose(options)
+  },
+  name: 'config',
+  version: pkg.version
 }
